@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>The Coleman’s Story — Preorder</title>
+  <meta name="description" content="Preorder 'The Coleman’s Story - Run From The Gun' by Ruben Leonard Fernandes. Psychological crime thriller. Limited first-edition run."/>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f3ecd9;
+      --charcoal:#222428;
+      --muted:#6b6b6b;
+      --blood:#9b0f12;
+      --accent:#2a2a2a;
+      --card-shadow:0 8px 30px rgba(34,34,34,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Merriweather',serif;
+      background:linear-gradient(180deg,var(--paper),#efe8d7 120%);
+      color:var(--charcoal);
+      line-height:1.45;
+      padding:28px;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:start;
+    }
+
+    .left{
+      padding:36px;
+      background:rgba(255,255,255,0.85);
+      border-left:6px solid var(--accent);
+      box-shadow:var(--card-shadow);
+      border-radius:8px;
+    }
+
+    .title{
+      font-family:'Montserrat',sans-serif;
+      font-weight:600;
+      letter-spacing:1px;
+      font-size:34px;
+      margin:0 0 10px 0;
+      color:var(--accent);
+    }
+    .subtitle{
+      margin:0 0 20px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .hero-row{display:flex;gap:18px;margin-bottom:18px;}
+    .cover{
+      width:160px;height:240px;border-radius:4px;overflow:hidden;
+      border:2px solid rgba(0,0,0,0.06);
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      flex:0 0 160px;
+      background:#fff center/cover no-repeat;
+    }
+
+    .buy-cta{display:flex;flex-direction:column;gap:8px;padding:6px 12px;}
+    .price{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--charcoal);font-size:20px;}
+    .tagline{color:var(--muted);font-size:13px;}
+    p.lead{margin-top:12px;color:#333;font-size:15px;}
+    hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.06),transparent);margin:22px 0}
+    .synopsis{font-size:15px;color:#2b2b2b}
+    .synopsis strong{color:var(--accent)}
+    .bullets{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .chip{
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.06);
+      padding:8px 10px;
+      border-radius:6px;
+      font-size:13px;
+      color:var(--muted);
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .right{
+      position:relative;
+      padding:28px;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:var(--card-shadow);
+      border:1px solid rgba(0,0,0,0.03);
+      height:fit-content;
+    }
+
+    .blood-splash{
+      position:absolute;
+      right:10px;
+      top:-40px;
+      width:140px;
+      height:140px;
+      background:url('blood_spot_tcs_cover.png') center/contain no-repeat;
+      opacity:0.9;
+      filter:drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+    }
+
+    .badge{
+      background:var(--blood);
+      color:white;
+      padding:6px 10px;
+      border-radius:20px;
+      font-weight:700;
+      font-size:13px;
+      display:inline-block;
+      margin-bottom:12px;
+    }
+
+    p {
+  text-align: justify;
+    }
+
+
+    form{display:grid;gap:12px}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px;}
+    input[type="text"],input[type="email"],textarea{
+      padding:10px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);
+      font-size:14px;font-family:inherit;background:#fff;outline:none;
+    }
+    textarea{min-height:100px;resize:vertical;padding-top:10px}
+    .row{display:flex;gap:8px}
+    .row .col{flex:1}
+    .qty{display:flex;align-items:center;gap:8px;}
+    .qty button{
+      background:transparent;border:1px solid rgba(0,0,0,0.08);
+      padding:6px 10px;border-radius:6px;font-size:16px;cursor:pointer;
+    }
+    .order-summary{
+      margin-top:12px;padding:12px;border-radius:8px;
+      background:linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.01));
+      border:1px dashed rgba(0,0,0,0.04);
+    }
+    .cta{
+      background:var(--accent);color:white;padding:12px 16px;border-radius:8px;
+      border:none;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;
+      transition:transform .08s ease;
+    }
+    .cta:active{transform:translateY(2px)}
+    .secondary{
+      background:transparent;border:1px solid rgba(0,0,0,0.06);
+      color:var(--accent);padding:10px 12px;border-radius:8px;
+    }
+
+    .small{font-size:13px;color:var(--muted)}
+    .author{
+      display:flex;gap:12px;align-items:center;margin-top:16px;
+      border-top:1px dashed rgba(0,0,0,0.04);padding-top:14px;
+    }
+    .author img{width:72px;height:72px;border-radius:8px;object-fit:cover;border:1px solid rgba(0,0,0,0.04)}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* testimonials */
+    .testimonials {
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid rgba(0,0,0,0.05);
+    }
+    .testimonial {
+      margin-bottom:22px;
+      font-size:14px;
+      color:#2b2b2b;
+      font-style:italic;
+      background:rgba(255,255,255,0.6);
+      padding:14px 18px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    }
+    .testimonial strong {
+      display:block;
+      margin-top:8px;
+      text-align:right;
+      font-style:normal;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    .modal{
+      position:fixed;left:0;top:0;width:100%;height:100%;
+      display:none;align-items:center;justify-content:center;
+      background:rgba(0,0,0,0.4);z-index:9999;padding:20px;
+    }
+    .modal .panel{
+      max-width:520px;background:white;padding:28px;border-radius:10px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.3);text-align:center;
+    }
+
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr; padding:0 8px}
+      .left{order:2;margin-top:18px}
+      .right{order:1}
+      .blood-splash{top:-20px;right:0;width:100px;height:100px;}
+    }
+
+    p {
+  text-align: justify;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="right">
+      <h1 class="title">The Coleman’s Story — Run From The Gun</h1>
+      <div class="subtitle">A psychological crime thriller about guilt, reinvention and the monstrous cost of escape.</div>
+
+      <div class="hero-row">
+        <div class="cover" style="background-image:url('TCS_main_cover.png');"></div>
+        <div class="buy-cta">
+          <div>
+            <div class="price">MRP: ₹̶5̶4̶9̶ → ₹275 <span style="color:var(--blood);font-size:13px;">(50% OFF preorder) <br> preorder through the attached form</span></div>
+            <div class="tagline">Signed first edition by authot — limited run</div>
+            <div class="small" style="margin-top:10px">Shipping throughout India • Secure preorder • Estimated dispatch: 1–2 weeks after publishing</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="lead synopsis">
+        <strong>Elton Coleman</strong> collapses under debt and desperation, kills his family, and vanishes under a new name — <em>James Park</em>. Eight years later he has rebuilt a life in Bangkok, but retired detectives are pests that do not sleep. A slow-burn manhunt peels back the skin of reinvention.
+      </p>
+
+      <hr class="sep">
+
+      <div class="bullets">
+        <div class="chip">Psychological Thriller</div>
+        <div class="chip">Fans of Gone Girl & Defending Jacob</div>
+        <div class="chip">Cinematic • Guilt-led protagonist</div>
+      </div>
+
+      <div style="margin-top:18px;">
+        <h3 style="font-family:'Montserrat',sans-serif;margin:0 0 8px 0">Synopsis</h3>
+        <p class="synopsis">Elton Coleman, a bank accountant in Chicago, drowns in debt, lies, and despair. Behind the mask of a devoted husband and father, he hides mounting failures—until one night, his desperation takes a dark turn. He stages the scene, vanishes under a new name—James Park—and rebuilds his life in Bangkok with the help of a fixer. Eight years later, retired detective Winston Bell spots the cracks. As suspicion grows, James prepares for the worst, haunted by the life he buried. But the past doesn’t stay silent. And a man can change everything—except the weight of his own sins.</p>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials">
+        <div class="testimonial">“The suspense is relentless, but what impressed me most was the psychological gravity. Every twist carries weight, every choice is rooted in human desperation. It’s not just a thriller—it’s a study of the darkest corners of the mind.”
+          <strong>— Dorothy R. D., Teacher</strong>
+        </div>
+        <div class="testimonial">“Reading The Coleman’s Story felt like watching a crime drama unfold scene by scene. Vivid, unsparing, and unforgettable.”
+          <strong>— Anonymous, Author & Surgeon</strong>
+        </div>
+        <div class="testimonial">“From the quiet suburbs of Chicago to the bustling streets of Bangkok, The Coleman’s Story is a cinematic crime thriller about secrets, survival, and the haunting weight of choices.”
+          <strong>— Neha S.</strong>
+        </div>
+        <div class="testimonial">“A cinematic thriller in every sense. The twists are sharp, pacing is tight and every scene plays out vividly in your mind.”
+          <strong>— Aifan, Software Engineer</strong>
+        </div>
+      </div>
+
+    <div class="author">
+    <img src="PassportPhoto2025.PNG" alt="Author photo" style="width:140px; height:auto; border-radius:8px;" onerror="this.style.display='none'">
+    <div>
+        <div style="font-weight:700">Ruben Leonard Fernandes</div>
+        <p class="small" style="text-align:justify;">
+        Ruben Leonard Fernandes is an author, poet, songwriter, 
+        music producer and software engineer. He is a student based in Bengaluru, 
+        India. While pursuing his engineering degree, he devoted his spare moments 
+        to crafting this thriller. His passion for storytelling began in childhood 
+        through poems and short stories, gradually shaping his creative voice. 
+        Alongside fiction, he is also a songwriter, blending emotion and narrative 
+        through music. With a love for cinematic storytelling, Ruben aims to create 
+        gripping, edge-of-the-seat experiences for readers.
+        </p>
+    </div>
+    </div>
+
+    <p style="text-align:justify; margin-top:10px;">
+    Open the <a href="https://rubenleofernandes.github.io/portfolio/" target="_blank" style="color:var(--accent); text-decoration:underline;">link</a> to know more about the author or scan the QR code below.
+    </p>
+    <img src="author_qr.png" alt="Author QR code" style="width:120px; height:auto; margin-top:8px;">
+
+      <footer>© Clever Fox Publishing • ISBN: 000-00-00000-00-0</footer>
+    </section>
+
+    <aside class="left">
+      <div class="blood-splash"></div>
+
+      <div class="badge">Preorder Now</div>
+      <h2 style="margin:0 0 10px 0;font-family:'Montserrat',sans-serif">Secure your copy</h2>
+      <div class="small" style="margin-bottom:10px">50% OFF preorder — pay only ₹275 (original ₹549). Fill in your details below.</div>
+
+      <form id="preorderForm" autocomplete="on" novalidate>
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="text" placeholder="Your phone number" required>
+
+        <label for="address">Shipping address</label>
+        <textarea id="address" name="address" placeholder="Street, City, State, Country" required></textarea>
+
+        <div class="row">
+          <div class="col">
+            <label>Quantity</label>
+            <div class="qty">
+              <button type="button" id="decQty">−</button>
+              <div id="qtyDisplay" style="min-width:48px;padding:8px 10px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);text-align:center">1</div>
+              <button type="button" id="incQty">+</button>
+            </div>
+          </div>
+          <div class="col">
+            <label>Order notes (optional)</label>
+            <input id="notes" name="notes" type="text" placeholder="Leave a note (gift, inscription)">
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div style="display:flex;justify-content:space-between"><div>Subtotal</div><div id="subtotal">₹275</div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:6px"><div>Shipping</div><div id="shipping">₹35</div></div>
+          <hr style="border:none;border-top:1px dashed rgba(0,0,0,0.06);margin:10px 0">
+          <div style="display:flex;justify-content:space-between;font-weight:700"><div>Total</div><div id="total">₹310</div></div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <button type="submit" class="cta" id="submitBtn">Place Preorder</button>
+          <button type="button" class="secondary" id="clearBtn">Clear</button>
+        </div>
+
+        <div class="small" style="margin-top:10px">You’ll receive an email confirmation within 48 hours. Payment on delivery or via link after confirmation.</div>
+      </form>
+    </aside>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="panel">
+      <h3>Order received</h3>
+      <p id="modalMsg">Thanks — your preorder has been received. We'll email you the confirmation and next steps.</p>
+      <div style="margin-top:18px">
+        <button id="closeModal" class="cta">Close</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+const PRICE = 275;
+const SHIPPING = 35;
+let qty = 1;
+
+const qtyDisplay=document.getElementById('qtyDisplay');
+const subtotalEl=document.getElementById('subtotal');
+const shippingEl=document.getElementById('shipping');
+const totalEl=document.getElementById('total');
+
+function updateSummary(){
+  const subtotal=PRICE*qty;
+  const total=subtotal+SHIPPING;
+  qtyDisplay.textContent=qty;
+  subtotalEl.textContent='₹'+subtotal;
+  shippingEl.textContent='₹'+SHIPPING;
+  totalEl.textContent='₹'+total;
+}
+
+document.getElementById('incQty').addEventListener('click',()=>{qty=Math.min(10,qty+1);updateSummary();});
+document.getElementById('decQty').addEventListener('click',()=>{qty=Math.max(1,qty-1);updateSummary();});
+updateSummary();
+
+document.getElementById('clearBtn').addEventListener('click',()=>{
+  document.getElementById('preorderForm').reset();qty=1;updateSummary();
+});
+
+const form=document.getElementById('preorderForm');
+const modal=document.getElementById('modal');
+const modalMsg=document.getElementById('modalMsg');
+document.getElementById('closeModal').addEventListener('click',()=>{modal.style.display='none'});
+
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const address=document.getElementById('address').value.trim();
+  const notes=document.getElementById('notes').value.trim();
+  if(!name||!email||!phone||!address){alert('Please fill all required fields.');return;}
+
+  const payload={
+    access_key:'22386d0e-38db-48a2-b688-e91220fb44bf',
+    subject:"Preorder: The Coleman's Story",
+    name,email,phone,
+    message:`Preorder for "The Coleman's Story - Run From The Gun"\nQuantity:${qty}\nNotes:${notes}\nPhone:${phone}\nShipping Address:${address}`
+  };
+
+  const submitBtn=document.getElementById('submitBtn');
+  submitBtn.disabled=true;submitBtn.textContent='Sending...';
+
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const data=await res.json();
+    if(res.ok&&data.success){
+      modalMsg.textContent='Thanks — your preorder has been received. We will email/contact you with the payment & shipping details within 48 hours.';
+      modal.style.display='flex';
+      form.reset();qty=1;updateSummary();
+    }else{alert('Submission failed.');console.error(data);}
+  }catch(err){console.error(err);alert('Network error.');}
+  finally{submitBtn.disabled=false;submitBtn.textContent='Place Preorder';}
+});
+</script>
+</body>
+</html>
